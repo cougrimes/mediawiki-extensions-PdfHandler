@@ -190,7 +190,7 @@ class PdfHandler extends ImageHandler {
 			"-F=PNG",
 			"-r{$wgPdfHandlerDpi}",
 			$srcPath,
-			$page,
+			$page
 			
 		);
 		$cmd .= " | " . wfEscapeShellArg(
