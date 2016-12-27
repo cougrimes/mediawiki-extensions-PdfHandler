@@ -187,16 +187,11 @@ class PdfHandler extends ImageHandler {
 
 		$cmd = '(' . wfEscapeShellArg(
 			$wgPdfProcessor,
-			"-sDEVICE=jpeg",
-			"-sOutputFile=-",
-			"-dFirstPage={$page}",
-			"-dLastPage={$page}",
-			"-dSAFER",
+			"-F=PNG",
 			"-r{$wgPdfHandlerDpi}",
-			"-dBATCH",
-			"-dNOPAUSE",
-			"-q",
-			$srcPath
+			$srcPath,
+			$page,
+			
 		);
 		$cmd .= " | " . wfEscapeShellArg(
 			$wgPdfPostProcessor,
